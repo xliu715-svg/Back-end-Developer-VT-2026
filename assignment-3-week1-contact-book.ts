@@ -22,7 +22,7 @@ const newContact1 = {
 };
 
 const newContact2 = {
-    id: 1,
+    id: 2,
     name: "Jane Doe",
     email: "jane.doe@gmail.com"
 };
@@ -48,7 +48,7 @@ const findByName = (name: string) => {
 };
 const res = findByName("Jane Doe");
 console.log(res);
-console.log(`You have found ${result} record.`);
+console.log(`You have found ${result} record with matching name of ${name}.`);
 
 //Function 4: removeById(id: number): boolean 
 const removeById = (id: number): boolean=> {
