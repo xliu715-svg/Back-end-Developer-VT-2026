@@ -43,6 +43,7 @@ listContacts();
 
 //Function 3: findByName(name: string): Contact[] 
 const findByName = (name: string) => {
+    const result = contacts.filter(contact => contact.name === name);
     return contacts.filter(contact => contact.name === name)
 };
 const res = findByName("Jane Doe");
