@@ -48,6 +48,7 @@ const findByName = (name: string) => {
 };
 const res = findByName("Jane Doe");
 console.log(res);
+console.log(`You have found ${result} record.`);
 
 //Function 4: removeById(id: number): boolean 
 const removeById = (id: number): boolean=> {
