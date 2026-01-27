@@ -14,6 +14,8 @@ const helloFromCallback = () => {
     console.log("Hello from callback!")
 }
 
+
+
 sayHello(helloFromCallback);
 
 // 2) Delayed Greeting 
