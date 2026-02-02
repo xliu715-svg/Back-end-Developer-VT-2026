@@ -4,14 +4,14 @@
 // To check if you've completed it, uncomment these console.logs!
 // console.log(addTwo(3));
 // console.log(addTwo(10));
-/*
+
 const addTwo = (num: number) => {
     return num + 2;
 };
 
 console.log(addTwo(3));
 console.log(addTwo(10));
-*/
+
 
 // ________________________________________________________________________________________________
 // Challenge 2
@@ -21,13 +21,13 @@ Create a function addS that accepts one input and adds an "s" to it.
 // uncomment these to check your work
 //console.log(addS("pizza"));
 //console.log(addS("bagel"));
-/*
+
 const addS = (text: string) => {
     return text + "s";
 };
 console.log(addS("pizza"));
 console.log(addS("bagel"));
-*/
+
 
 // ________________________________________________________________________________________________
 // Challenge 3
@@ -38,7 +38,7 @@ Create a function called map that takes two inputs:
 Have map return a new array filled with numbers that are the result of using the 'callback' function on each element of the input array.
 */
 //console.log(map([1, 2, 3], addTwo));
-/*
+
 type addTwoFunction = (num: number) => number;
 const map = (input: number[], addTwo: addTwoFunction) => {
     const result: number[] = [];
@@ -55,7 +55,7 @@ const addTwo = (num: number) => {
 };
 
 console.log(map([1, 2, 3], addTwo));
-*/
+
 
 // ________________________________________________________________________________________________
 // Challenge 4
@@ -63,7 +63,7 @@ console.log(map([1, 2, 3], addTwo));
 The function forEach takes an array and a callback, and runs the callback on each element of the array. 
 forEach does not return anything.
 */
-/*
+
 type callbackFnFunction = (char: string) => string;
 const forEachFn = (letters: string[], callbackFn:callbackFnFunction) => {
     for (const letter of letters) {
@@ -79,7 +79,7 @@ let alphabet = "";
 const letters = ["a", "b", "c", "d"];
 forEachFn(letters, callbackFn);
 console.log(alphabet);
-*/
+
 
 // ________________________________________________________________________________________________
 // Challenge 5
@@ -90,15 +90,15 @@ Call this new function mapWith.//console.log(mapWith([1, 2, 3], addTwo));
 //console.log(mapWith([1, 2, 3], addTwo)); should output [ 3, 4, 5 ]
 
 //redefine forEachFn so it returns not only a string but can be any type
-/*
+
 const forEachFn = <T>(array: T[], callbackFn:(element: T) => void): void => {
     for (const element of array) {
         callbackFn(element);
     }
 };
-*/
+
 //create a new mapWith function
-/*
+
 type mapWithFunction = (num: number) => number;
 const mapWith = (array: number[],callback: mapWithFunction) => {
     const res: number[] = [];
@@ -114,7 +114,7 @@ const addTwo = (num: number) => {
 };
 
 console.log(mapWith([1, 2, 3], addTwo));
-*/
+
 
 // ________________________________________________________________________________________________
 // Challenge 6
@@ -123,7 +123,7 @@ The function reduce takes an array and reduces the elements to a single value.
 For example it can sum all the numbers, multiply them, 
 or any operation that you can put into a function.
 */
-/*
+
 type ReduceFunction = (accumulator: number,initialValue:number) => number;
 const reduce = (array: number[],initialValue: number, callback: ReduceFunction): number => {
     let accumulator = initialValue;
@@ -140,7 +140,7 @@ console.log(sum);
 
 const multiply = reduce([1, 2, 3, 4], 1, (acc, num) => acc * num);
 console.log(multiply);
-*/
+
 
 
 // ________________________________________________________________________________________________
@@ -179,3 +179,4 @@ console.log(
   intersection([5, 10, 15, 20], [15, 88, 1, 5, 7], [1, 10, 15, 5, 20])
 );
 // should log: [5, 15]
+
