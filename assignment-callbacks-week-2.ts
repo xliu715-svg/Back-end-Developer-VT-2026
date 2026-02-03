@@ -14,8 +14,6 @@ const helloFromCallback = () => {
     console.log("Hello from callback!")
 }
 
-
-
 sayHello(helloFromCallback);
 
 // 2) Delayed Greeting 
@@ -181,11 +179,10 @@ const calculator = (operation: string, a:number, b: number, printRes: printResFu
 };
 
 const printRes = (result: number) => {
-    console.log(result)
+    console.log(`The result is ${result}`)
 };
 
 calculator("addition", 45, 55, printRes);
-
 
 // 10) Chained Callbacks 
 
