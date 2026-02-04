@@ -1,5 +1,6 @@
 //Part 1: create my own promise
-const flipCoin = new Promise((resolve, reject) => {
+const flipCoin2 = () => {
+  return new Promise((resolve, reject) => {
   //Logic if success
   let result = Math.random();
 
@@ -8,53 +9,56 @@ const flipCoin = new Promise((resolve, reject) => {
   } else {
     reject("You lost!");
   }
-});
+})};
 
-flipCoin
-  .then((message) => {
-    console.log(message);
-  })
-  .catch((error) => {
+const flipCoinResult = async () => {
+  try {
+    const result = await flipCoin2();
+    console.log(result);
+  } catch (error) {
     console.log(error);
-  });
+  }
+};
+
+flipCoinResult();
+
 
 //Part 2: Fetching Data from an API
 
-type DadJokeResponse = {
-  id: string;
-  joke: string;
+const fetchJoke2 = async () => {
+  try {
+    const response = await fetch(`https://icanhazdadjoke.com/`, {
+     headers: {
+       Accept: "application/json",
+     },
+   })
+   const data = await response.json();
+   console.log(`Dad joke (ID: ${data.id}): ${data.joke}`);
+  } catch (error) {
+    console.log("Error fetching joke: " + error);
+  }
 };
 
-const fetchJoke = () => {
-  const promise: Promise<void> = fetch(`https://icanhazdadjoke.com/`, {
-    headers: {
-      Accept: "application/json",
-    },
-  })
-    .then((response: Response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok.");
-      }
-      return response.json() as Promise<DadJokeResponse>;
-    })
-    .then((data: DadJokeResponse) => {
-      const joke: string = data.joke;
-      console.log(`Dad joke (ID: ${data.id}): ${data.joke}`);
-    })
-    .catch((error: unknown) => {
-      console.error("Error fetching joke: ", error);
-    });
-};
+fetchJoke2();
 
-fetchJoke();
 
 
 //Mix them together
-flipCoin
-.then((message) => {
-    console.log(message);
-    return fetchJoke();
-})
-.catch((error) => {
+
+const getJokeAfterCoinFlip = async () => {
+  try {
+    const result = await flipCoin2();
+    console.log(result);
+    const response = await fetch(`https://icanhazdadjoke.com/`, {
+     headers: {
+       Accept: "application/json",
+     },
+   })
+   const data = await response.json();
+   console.log(`Dad joke (ID: ${data.id}): ${data.joke}`);
+  } catch (error) {
     console.log(error);
-});
+  }
+};
+getJokeAfterCoinFlip();
+
